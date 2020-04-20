@@ -1,3 +1,5 @@
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/MrRobotGOD/tgfilestream/tree/master)
+
 # tgfilestream
 A Telegram bot that can stream Telegram files to users over HTTP.
 
@@ -22,3 +24,12 @@ should include the protocol, e.g. `https://example.com`.
 * `REQUEST_LIMIT` (default 5) - The maximum number of requests a single IP can have active at a time.
 * `CONNECTION_LIMIT` (default 20) - The maximum number of connections to a single Telegram datacenter.
 * `TG_START_MESG` - The message that should be shown in Telegram chat, in case of non-media message.
+
+# How to get TG_SESSION_NAME string
+```
+   wget https://github.com/MrRobotGOD/tgfilestream/raw/master/GenerateStringSession.py
+   pip3 install telethon
+   python3 GenerateStringSession.py
+
+```
+   *When it will ask for Phone Number and Bot token Give bot token not phone no.*

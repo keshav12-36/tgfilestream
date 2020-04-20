@@ -1,0 +1,32 @@
+{
+ "name": "tgfilestream",
+ "repository": "https://github.com/MrRobotGOD/tgfilestream",
+ "env": {
+   "TG_API_ID": {
+      "description": "Your Telegram API ID",
+      "value": ""
+  },
+   "TG_API_HASH": {
+      "description": " Your Telegram API hash",
+      "value": ""
+  },
+   "TG_SESSION_NAME": {
+      "description": "Read READme.Md to know how to generate ",
+      "value": ""
+  },
+   "HOST": {
+      "description": "Don't Change This",
+      "value": "0.0.0.0",
+      "required": false
+  },
+   "PUBLIC_URL": {
+      "description": "Example - https://yourappname.herokuapp.com/ ",
+      "value": ""
+  },
+   "TG_START_MESG": {
+      "description": "The message that should be shown in Telegram chat, in case of non-media message",
+      "value": "Send Telegram file to get a link to download it",
+      "required": false
+  }
+ }
+}
