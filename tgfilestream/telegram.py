@@ -35,12 +35,11 @@ client = TelegramClient(StringSession(session_name), api_id, api_hash)
 transfer = ParallelTransferrer(client)
 
 
-@client.on(events.NewMessage(pattern='/start')
-async def handle_message(evt: events.NewMessage.Event) -> None:
+@client.on(events.NewMessage(pattern="/start", func=lambda e: e.is_reply)
+async def handle_message(evt: events.NewMessage) -> None:
     if not evt.file:
-        await evt.reply(start_message)
+        await evt.reply(return)
         return
-    func=lambda e: e.is_reply
     url = public_url / str(pack_id(evt)) / get_file_name(evt)
     await evt.reply(f"Link to download file: [{url}]({url})")
     log.info(f"Replied with link for {evt.id} to {evt.from_id} in {evt.chat_id}")
