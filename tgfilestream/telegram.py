@@ -36,7 +36,7 @@ transfer = ParallelTransferrer(client)
 
 
 @client.on(pattern="^.start ?(.*)")
-async def handle_message(evt: events.NewMessage.Event) -> None:
+async def _(event):
     if not evt.is_private:
         await evt.reply(group_chat_message)
         return
