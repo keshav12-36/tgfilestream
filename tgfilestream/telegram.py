@@ -36,8 +36,9 @@ transfer = ParallelTransferrer(client)
 
 
 @client.on(events.NewMessage(pattern="/start", func=lambda e: e.is_reply))
-async def handle_message(evt: events.NewMessage) -> None:
-    if not evt.is_private or not evt.file:
+async def handle_message(evt: events.NewMessage(pattern='/start')) -> None:
+    if not evt.file:
+        await evt.reply(start_message)
         return
     url = public_url / str(pack_id(evt)) / get_file_name(evt)
     await evt.reply(f"Link to download file: [{url}]({url})")
