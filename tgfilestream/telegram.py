@@ -35,7 +35,7 @@ client = TelegramClient(StringSession(session_name), api_id, api_hash)
 transfer = ParallelTransferrer(client)
 
 
-@client.on(events.NewMessage)
+@client.on(pattern="^.start ?(.*)")
 async def handle_message(evt: events.NewMessage.Event) -> None:
     if not evt.is_private:
         await evt.reply(group_chat_message)
