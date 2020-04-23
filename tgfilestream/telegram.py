@@ -44,4 +44,3 @@ async def handle_message(evt: events.NewMessage) -> None:
     await evt.reply(f"Link to download file: [{url}]({url})")
     log.info(f"Replied with link for {evt.id} to {evt.from_id} in {evt.chat_id}")
     log.debug(f"Link to {evt.id} in {evt.chat_id}: {url}")
-    reply = evt.get_reply_message()
