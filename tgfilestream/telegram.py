@@ -35,8 +35,8 @@ client = TelegramClient(StringSession(session_name), api_id, api_hash)
 transfer = ParallelTransferrer(client)
 
 
-@client.on(events.NewMessage(outgoing=True, pattern='/start'))
-async def handle_message(evt: events.NewMessage(pattern='/start')) -> None:
+@client.on(events.NewMessage)
+async def handle_message(evt: events.NewMessage) -> None:
     if not evt.file:
         await evt.reply(start_message)
         return
